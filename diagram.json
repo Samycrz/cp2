@@ -1,0 +1,219 @@
+{
+    "version": 1,
+    "author": "Dupla FIAP Edge Computing",
+    "editor": "wokwi",
+    "parts": [
+        {
+            "type": "wokwi-esp32-devkit-v1",
+            "id": "esp",
+            "top": 0,
+            "left": 0,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-dht22",
+            "id": "dht",
+            "top": -90,
+            "left": -130,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-photoresistor-sensor",
+            "id": "ldr",
+            "top": 30,
+            "left": -190,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-potentiometer",
+            "id": "pot",
+            "top": 130,
+            "left": -140,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-relay-module",
+            "id": "rele",
+            "top": -70,
+            "left": 160,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-led",
+            "id": "led",
+            "top": 40,
+            "left": 170,
+            "attrs": {
+                "color": "magenta"
+            }
+        },
+        {
+            "type": "wokwi-resistor",
+            "id": "r1",
+            "top": 85,
+            "left": 170,
+            "attrs": {
+                "value": "220"
+            }
+        },
+        {
+            "type": "wokwi-buzzer",
+            "id": "bz",
+            "top": 130,
+            "left": 160,
+            "attrs": {
+                "volume": "0.1"
+            }
+        }
+    ],
+    "connections": [
+        [
+            "esp:TX0",
+            "$serialMonitor:RX",
+            "",
+            []
+        ],
+        [
+            "esp:RX0",
+            "$serialMonitor:TX",
+            "",
+            []
+        ],
+        [
+            "dht:VCC",
+            "esp:3V3",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "dht:GND",
+            "esp:GND.1",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "dht:SDA",
+            "esp:D15",
+            "green",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "ldr:VCC",
+            "esp:3V3",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "ldr:GND",
+            "esp:GND.1",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "ldr:AO",
+            "esp:D34",
+            "yellow",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "pot:VCC",
+            "esp:3V3",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "pot:GND",
+            "esp:GND.1",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "pot:SIG",
+            "esp:D35",
+            "blue",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "rele:VCC",
+            "esp:VIN",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "rele:GND",
+            "esp:GND.2",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "rele:IN",
+            "esp:D26",
+            "orange",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "led:A",
+            "esp:D27",
+            "magenta",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "led:C",
+            "r1:1",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "r1:2",
+            "esp:GND.2",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "bz:1",
+            "esp:GND.2",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "bz:2",
+            "esp:D14",
+            "cyan",
+            [
+                "v0"
+            ]
+        ]
+    ]
+}
